@@ -11,6 +11,10 @@ function App() {
         bad: 1,
     });
 
+    // const updateFeedback = feedbackType => {
+    //     setFeedback(() => {});
+    // };
+
     return (
         <>
             <Description />

@@ -1,11 +1,13 @@
 const Feedback = ({ feedback }) => {
     return (
         <div>
-            {Object.keys(feedback).map(key => (
-                <p key={key}>
-                    {key}: {feedback[key]}
-                </p>
-            ))}
+            <ul>
+                {Object.keys(feedback).map(key => (
+                    <li key={key}>
+                        {key}: {feedback[key]}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
