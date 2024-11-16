@@ -1,5 +1,6 @@
 import Description from './Description/Description';
 import Feedback from './Feedback/Feedback';
+import Notification from './Notification/Notification';
 import Options from './Options/Options';
 // eslint-disable-next-line no-unused-vars
 import { useState } from 'react';
@@ -26,6 +27,11 @@ function App() {
         });
     };
 
+    const totalFeedback = Object.values(feedback).reduce(
+        (total, value) => total + value,
+        0
+    );
+
     return (
         <>
             <Description />
@@ -34,7 +40,11 @@ function App() {
                 updateFeedback={updateFeedback}
                 feedbackResetBtn={feedbackResetBtn}
             />
-            <Feedback feedback={feedback} />
+            {totalFeedback > 0 ? (
+                <Feedback feedback={feedback} />
+            ) : (
+                <Notification />
+            )}
         </>
     );
 }
