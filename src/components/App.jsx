@@ -18,13 +18,21 @@ function App() {
         }));
     };
 
+    const feedbackResetBtn = () => {
+        setFeedback({
+            good: 0,
+            neutral: 0,
+            bad: 0,
+        });
+    };
+
     return (
         <>
             <Description />
             <Options
                 feedback={feedback}
-                setFeedback={setFeedback}
                 updateFeedback={updateFeedback}
+                feedbackResetBtn={feedbackResetBtn}
             />
             <Feedback feedback={feedback} />
         </>

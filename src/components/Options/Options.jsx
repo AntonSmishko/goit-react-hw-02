@@ -1,19 +1,9 @@
-const Options = ({ feedback, setFeedback, updateFeedback }) => {
-    // const updateFeedback = feedbackType => {
-    //     setFeedback(prev => ({
-    //         ...prev,
-    //         [feedbackType]: prev[feedbackType] + 1,
-    //     }));
-    // };
+const Options = ({
+    feedback,
 
-    const feedbackResetBtn = () => {
-        setFeedback({
-            good: 0,
-            neutral: 0,
-            bad: 0,
-        });
-    };
-
+    updateFeedback,
+    feedbackResetBtn,
+}) => {
     return (
         <div>
             {Object.keys(feedback).map(key => (
