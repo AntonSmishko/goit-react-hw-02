@@ -42,7 +42,7 @@ function App() {
                 feedbackResetBtn={feedbackResetBtn}
             />
             {totalFeedback > 0 ? (
-                <Feedback feedback={feedback} />
+                <Feedback feedback={feedback} totalFeedback={totalFeedback} />
             ) : (
                 <Notification />
             )}
