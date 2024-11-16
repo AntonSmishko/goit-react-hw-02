@@ -3,14 +3,22 @@ import Feedback from './Feedback/Feedback';
 import Notification from './Notification/Notification';
 import Options from './Options/Options';
 // eslint-disable-next-line no-unused-vars
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
-    const [feedback, setFeedback] = useState({
-        good: 0,
-        neutral: 0,
-        bad: 0,
+    const [feedback, setFeedback] = useState(() => {
+        return (
+            JSON.parse(localStorage.getItem('feedback')) || {
+                good: 0,
+                neutral: 0,
+                bad: 0,
+            }
+        );
     });
+
+    useEffect(() => {
+        localStorage.setItem('feedback', JSON.stringify(feedback));
+    }, [feedback]);
 
     const updateFeedback = feedbackType => {
         setFeedback(prev => ({
