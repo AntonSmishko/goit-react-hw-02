@@ -6,19 +6,15 @@ import { useState } from 'react';
 
 function App() {
     const [feedback, setFeedback] = useState({
-        good: 24,
-        neutral: 8,
-        bad: 1,
+        good: 0,
+        neutral: 0,
+        bad: 0,
     });
-
-    // const updateFeedback = feedbackType => {
-    //     setFeedback(() => {});
-    // };
 
     return (
         <>
             <Description />
-            <Options feedback={feedback} />
+            <Options feedback={feedback} setFeedback={setFeedback} />
             <Feedback feedback={feedback} />
         </>
     );
