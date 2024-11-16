@@ -1,6 +1,6 @@
 const Options = ({
     feedback,
-
+    totalFeedback,
     updateFeedback,
     feedbackResetBtn,
 }) => {
@@ -11,7 +11,11 @@ const Options = ({
                     {key}
                 </button>
             ))}
-            <button onClick={feedbackResetBtn}>Reset</button>
+            {totalFeedback > 0 ? (
+                <button onClick={feedbackResetBtn}>Reset</button>
+            ) : (
+                <></>
+            )}
         </div>
     );
 };

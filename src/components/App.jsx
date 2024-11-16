@@ -36,6 +36,7 @@ function App() {
         <>
             <Description />
             <Options
+                totalFeedback={totalFeedback}
                 feedback={feedback}
                 updateFeedback={updateFeedback}
                 feedbackResetBtn={feedbackResetBtn}
