@@ -1,10 +1,12 @@
-const Options = ({ feedback, setFeedback }) => {
-    const onClickHandler = value => {
-        setFeedback(prev => ({ ...prev, [value]: prev[value] + 1 }));
-    };
+const Options = ({ feedback, setFeedback, updateFeedback }) => {
+    // const updateFeedback = feedbackType => {
+    //     setFeedback(prev => ({
+    //         ...prev,
+    //         [feedbackType]: prev[feedbackType] + 1,
+    //     }));
+    // };
 
     const feedbackResetBtn = () => {
-        console.log('reset');
         setFeedback({
             good: 0,
             neutral: 0,
@@ -15,7 +17,7 @@ const Options = ({ feedback, setFeedback }) => {
     return (
         <div>
             {Object.keys(feedback).map(key => (
-                <button key={key} onClick={() => onClickHandler(key)}>
+                <button key={key} onClick={() => updateFeedback(key)}>
                     {key}
                 </button>
             ))}
